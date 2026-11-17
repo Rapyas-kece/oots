@@ -4,6 +4,7 @@
 	type Theme = 'light' | 'dark';
 
 	let theme: Theme = $state('light');
+	let nama = $state('');
 </script>
 
 <div class="min-h-dvh bg-bg text-ink {theme === 'dark' ? 'dark' : ''}">
@@ -12,7 +13,7 @@
 		<div
 			class="mx-auto flex h-[60px] max-w-[1440px] items-center justify-between px-6 lg:h-[72px] lg:px-24"
 		>
-			<a href="/" class="text-[15px] font-semibold lg:text-base">nama.kamu</a>
+			<a href="/" class="text-[15px] font-semibold lg:text-base">Portofolio Ravidya</a>
 
 			<div class="flex items-center gap-2 lg:gap-8">
 				<nav class="hidden items-center gap-7 lg:flex">
@@ -79,17 +80,37 @@
 	</header>
 
 	<!-- hero -->
+
+	<!-- hero -->
 	<section class="mx-auto max-w-[1440px] px-6 pt-16 pb-14 lg:px-24 lg:pt-[120px]">
+		<!-- Judul utama sekarang akan berubah otomatis mengikuti variabel nama -->
 		<h1
 			class="text-[62px] leading-[0.88] font-medium tracking-[-1.6px] lg:text-[232px] lg:tracking-[-9px]"
 		>
-			Nama Kamu
+			{nama || 'Ravidya Satrio Adi'}
 		</h1>
 
 		<div class="mt-7 flex flex-col gap-6">
 			<p class="max-w-[560px] text-[17px] leading-[1.6] text-muted lg:text-xl">
 				Siswa SMK jurusan RPL. Membangun antarmuka web yang cepat, rapi, dan mudah dipakai.
 			</p>
+
+			<!-- Input sapaan interaktif -->
+			<div class="flex max-w-[360px] flex-col gap-2">
+				<label for="nama" class="font-mono text-[11px] tracking-[1.1px] text-muted uppercase">
+					Ubah Nama
+				</label>
+				<input
+					id="nama"
+					type="text"
+					bind:value={nama}
+					placeholder="Ketik nama baru..."
+					class="h-12 border border-line bg-transparent px-4 text-[15px] text-ink placeholder:text-muted focus:border-primary focus:outline-none"
+				/>
+				<p class="text-[15px] text-ink">
+					Halo, <span class="font-medium text-primary">{nama || 'teman'}</span>!
+				</p>
+			</div>
 
 			<div class="flex items-center gap-3">
 				<a
@@ -112,6 +133,7 @@
 		</div>
 	</section>
 
+
 	<!-- band -->
 	<div class="border-t border-line">
 		<img
@@ -120,7 +142,7 @@
 			class="h-[220px] w-full object-cover lg:h-[420px]"
 		/>
 		<div class="mx-auto max-w-[1440px] px-6 py-4 lg:px-24">
-			<p class="font-mono text-[11px] tracking-[1.1px] text-muted">LAB RPL — SMK NEGERI 1 · 2026</p>
+			<p class="font-mono text-[11px] tracking-[1.1px] text-muted">LAB RPL — SMK NEGERI 8 Semarang · 2026</p>
 		</div>
 	</div>
 
@@ -179,15 +201,15 @@
 				class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6"
 			>
 				<a href="mailto:kamu@email.com" class="font-mono text-xs tracking-[1.1px] text-primary">
-					kamu@email.com
+					ravidya.satrioadi@email.com
 				</a>
 				<div class="flex items-center gap-6">
 					<a href="#proyek" class="font-mono text-[11px] tracking-[1.1px] text-muted">PROYEK</a>
 					<a
-						href="https://github.com/nama-kamu"
+						href="https://github.com/Rapyas-kece"
 						class="font-mono text-[11px] tracking-[1.1px] text-muted">GITHUB</a
 					>
-					<a href="mailto:kamu@email.com" class="font-mono text-[11px] tracking-[1.1px] text-muted">
+					<a href="mailto:ravidya.satrioadi@email.com" class="font-mono text-[11px] tracking-[1.1px] text-muted">
 						EMAIL
 					</a>
 				</div>
@@ -195,3 +217,4 @@
 		</div>
 	</footer>
 </div>
+
