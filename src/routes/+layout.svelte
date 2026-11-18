@@ -8,7 +8,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Portofolio — OOTS 2026</title>
+	<title>Ravidya Satrio Adi — Security Researcher & Developer</title>
+	<meta name="description" content="Portofolio Ravidya Satrio Adi - Siswa SMK N 8 Semarang Jurusan PPLG. Web Exploitation, SvelteKit, and Systems." />
 </svelte:head>
 
 {@render children()}
